@@ -1,0 +1,130 @@
+.m-centered {
+  margin: 0 auto;
+}
+.flext-start {
+  justify-content: flex-start;
+}
+.card,
+.vvcard:hover {
+  border-radius: 5px;
+}
+.pre-img,
+.vvcard:hover .prod-img,
+.vvicard .prod-img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.is-clickable {
+  cursor: pointer;
+}
+.is-flex-self-end {
+  align-self: flex-end;
+}
+.is-justify-self-end {
+  justify-self: flex-end;
+}
+.is-flex-self-start {
+  align-self: flex-start;
+}
+.is-col-flex {
+  flex-direction: column;
+}
+.justy-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.underline:hover {
+  text-decoration: underline;
+}
+.is-color-db {
+  color: #dbdbdb;
+}
+.is-color-4a {
+  color: #4a4a4a;
+}
+.is-red {
+  color: red !important;
+}
+.is-color-004e66 {
+  color: #004e66 !important;
+}
+.is-color-white {
+  color: white !important;
+}
+.is-color-black {
+  color: #4a4a4a;
+}
+.is-bgcolor-004e66 {
+  background-color: #004e66 !important;
+}
+.is-color-004e66-hover:hover,
+.is-color-004e66-hover:active {
+  color: #004e66 !important;
+}
+.is-bgcolor-white {
+  background-color: white !important;
+}
+.has-no-border {
+  border: none !important;
+}
+.is-border-radius-5px {
+  border-radius: 5px;
+}
+.fited-width {
+  width: fit-content !important;
+}
+.fited-height {
+  height: fit-content !important;
+}
+.is-white {
+  color: white !important;
+}
+.full-width {
+  width: 90% !important;
+}
+.is-d-centered {
+  width: fit-content !important;
+  margin: 0 auto !important;
+}
+.has-a-border {
+  border: 1px solid;
+}
+.border-color-gray {
+  border-color: #d4d4d4 !important;
+}
+.border-color-dbdb {
+  border-color: #dbdbdb !important;
+}
+.is-bg-red {
+  background-color: rgb(247, 56, 56) !important;
+}
+.is-bg-white {
+  background-color: white !important;
+}
+.has-no-outline,
+.has-no-outline:focus,
+.has-no-outline:hover,
+.has-no-outline:active {
+  outline: none !important;
+}
+.is-green,
+.fa-check {
+  color: #028300 !important;
+}
+.has-outline-green:focus,
+.has-outline-green:active {
+  outline-color: #028300 !important;
+  border-color: #028300 !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.has-outline-red:focus,
+.has-outline-red:active {
+  outline-color: red !important;
+  border-color: red !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

@@ -1,26 +1,7 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">Waloo</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div class="container is-fluid pt-1 home">
+    <div class="waloo-head navbar is-fixed-top">
+      <Header />
     </div>
   </div>
 </template>
@@ -29,35 +10,29 @@
 export default {}
 </script>
 
-<style>
-.container {
+<style scoped>
+/* .container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+} */
+.home {
+  animation: 0.5s appear;
+  height: 1000px;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.waloo-head {
+  box-shadow: 0 0.5em 1em -0.95em rgba(10, 10, 10, 0.164),
+    0 0px 0 0px rgba(10, 10, 10, 0.068);
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.navbar {
+  width: 100% !important;
 }
-
-.links {
-  padding-top: 15px;
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
 }
 </style>

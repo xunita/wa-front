@@ -1,4 +1,5 @@
 export default {
+  loading: false,
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
@@ -14,7 +15,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Waloo - Faites vos achats dans toutes vos boutiques préférées',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,7 +25,20 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src:
+          'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
+      },
+      { src: 'https://use.fontawesome.com/releases/v5.14.0/js/all.js' },
+      { src: 'https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js' },
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '/css/logo.css' },
+      { rel: 'stylesheet', href: '/css/global.css' },
+      { rel: 'stylesheet', href: '/css/page.css' },
+    ],
   },
   /*
    ** Global CSS
@@ -63,7 +77,10 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'http://127.0.0.1:8000/api',
+    credentials: true,
+  },
   /*
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration

@@ -96,7 +96,7 @@ export default {}
   .mymini-cart {
     display: block !important;
     position: relative;
-    right: 1.5rem;
+    right: 2rem;
   }
   .search-mini {
     margin-left: 0% !important;
@@ -106,7 +106,7 @@ export default {}
 }
 @media screen and (max-width: 413px) {
   .mymini-cart {
-    right: 4rem;
+    right: 5rem;
   }
 }
 @media screen and (max-width: 370px) {

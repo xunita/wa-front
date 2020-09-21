@@ -42,22 +42,6 @@
           </client-only>
         </div>
       </div>
-      <div v-if="looking" class="list-result mt-2">
-        <div class="dropdown-content">
-          <a
-            v-for="(item, key) in filteredList"
-            :key="key"
-            class="dropdown-item is-flex align-center"
-          >
-            <span class="icon for-search mt-1 is-block">
-              <i class="fas fa-search"></i>
-            </span>
-            <span class="is-block has-text-weight-semibold">{{
-              item.title
-            }}</span>
-          </a>
-        </div>
-      </div>
     </client-only>
   </div>
 </template>
@@ -94,9 +78,6 @@ export default {
         return title.title.toLowerCase().includes(this.search.toLowerCase())
       })
     },
-  },
-  beforeMount() {
-    this.making_search()
   },
   methods: {
     async making_search() {

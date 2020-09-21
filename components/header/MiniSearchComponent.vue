@@ -138,7 +138,19 @@ div.select select:active {
 }
 div.select {
   /* color: #004e66 !important; */
-  width: 186px !important;
+  width: 30% !important;
+}
+@media screen and (max-width: 410px) {
+  .search-d,
+  .d-search {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 370px) {
+  .search-d,
+  .d-search {
+    width: 60% !important;
+  }
 }
 .delete {
   margin-top: 0.78rem;
@@ -146,46 +158,24 @@ div.select {
 .d-search {
   flex-direction: column;
   height: 24px !important;
+  width: 100% !important;
 }
 .list-result {
   position: relative;
   left: 11.75rem;
-  width: 390px;
+  width: 63%;
   z-index: 99;
-}
-@media screen and (max-width: 1210px) {
-  .search-input {
-    width: 350px !important;
-  }
-  .list-result {
-    width: 257px !important;
-    left: 11.75rem;
-  }
-  .search-d {
-    width: 400px !important;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .search-input {
-    width: 200px !important;
-  }
-  .list-result {
-    width: 257px !important;
-    left: 5rem;
-  }
-  .search-d {
-    width: 80px !important;
-  }
 }
 .search-d {
   width: fit-content;
   height: 28px;
+  width: 100%;
   align-items: center;
 }
 .search-input {
   height: 40px;
   font-size: medium;
-  width: 390px !important;
+  width: 100% !important;
   padding-top: 0.4rem;
   padding-right: 64px !important;
   padding-bottom: 0.4rem;

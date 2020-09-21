@@ -1,7 +1,7 @@
 <template>
-  <div class="user">
+  <div class="mini">
     <client-only>
-      <div v-if="isLogged" class="user-auth">
+      <div v-if="isLogged" class="mini-auth">
         <div class="dropdown dd-btn" :class="{ 'is-active': isShown }">
           <div class="dropdown-trigger">
             <button
@@ -15,9 +15,7 @@
                 }
               "
             >
-              <span class="has-text-weight-semibold is-size-6 name"
-                >John Doe</span
-              >
+              <span class="has-text-weight-semibold is-size-6 name">gn</span>
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
               </span>
@@ -86,7 +84,7 @@
           </div>
         </div>
       </div>
-      <div v-else class="user-unauth is-flex align-center">
+      <div v-else class="mini-unauth">
         <div class="dropdown dd-btn" :class="{ 'is-active': isShownReg }">
           <div class="dropdown-trigger">
             <button
@@ -101,7 +99,7 @@
               "
             >
               <span class="has-text-weight-semibold is-size-6 name"
-                >Sign in</span
+                >Omotekesse</span
               >
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -110,8 +108,21 @@
           </div>
           <div id="dropdown-menu" class="dropdown-menu signup" role="menu">
             <div class="dropdown-content has-text-centered">
+              <a class="a-cart is-flex align-center dropdown-item">
+                <span v-if="hasFavorite" key="stared" class="icon is-block">
+                  <i class="fas fa-heart"></i>
+                </span>
+                <span v-else key="unstared" class="icon is-block">
+                  <i class="far fa-heart"></i>
+                </span>
+                <span
+                  class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
+                  >My favorites</span
+                >
+              </a>
+              <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>
               <nuxt-link
-                class="login px-4 underline is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
+                class="login mt-1 px-4 underline is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
                 to="#"
                 >Sign In</nuxt-link
               >
@@ -119,8 +130,7 @@
                 class="is-block has-text-weight-semibold is-size-7 pt-1 mb-2"
                 >Or</span
               >
-              <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>
-              <nuxt-link class="mx-4 mt-2 button btn-subscribe is-block" to="#"
+              <nuxt-link class="mx-4 button btn-subscribe is-block" to="#"
                 >Create an account</nuxt-link
               >
             </div>
@@ -179,7 +189,6 @@ export default {
   color: black !important;
 }
 .fa-shopping-cart {
-  font-size: 22px !important;
   color: #6e6e6e;
 }
 .btn-subscribe {

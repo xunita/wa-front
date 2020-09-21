@@ -8,7 +8,7 @@
           </span>
         </a>
         <Logo />
-        <h1 class="title-logo">Waloo</h1>
+        <h1 class="title-logo pb-1">Waloo</h1>
       </client-only>
     </div>
   </nuxt-link>

@@ -17,6 +17,15 @@
 .is-clickable {
   cursor: pointer;
 }
+.is-unclickable {
+  cursor: default !important;
+}
+.logout-btn:hover {
+  background-color: #004e661a !important;
+}
+.logout-btn {
+  border: none !important;
+}
 .is-flex-self-end {
   align-self: flex-end;
 }

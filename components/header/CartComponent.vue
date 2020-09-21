@@ -25,8 +25,15 @@ export default {
 </script>
 
 <style scoped>
+.cart,
+.my-cart {
+  width: fit-content !important;
+}
+.my-cart {
+  width: 60px !important;
+}
 .fa-shopping-cart {
-  font-size: 20px !important;
+  font-size: 16px !important;
   color: #6e6e6e;
 }
 .a-cart:hover .fa-shopping-cart,

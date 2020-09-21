@@ -1,5 +1,5 @@
 <template>
-  <div class="favorite">
+  <div class="favorite" :class="{ expand: isLogged }">
     <client-only>
       <a class="a-fav">
         <span v-if="hasFavorite" key="stared" class="icon">
@@ -35,9 +35,12 @@ export default {
 </script>
 
 <style scoped>
+.expand {
+  width: 85px !important;
+}
 .fa-heart,
 .fa-bell {
-  font-size: 20px !important;
+  font-size: 18px !important;
   color: #6e6e6e;
 }
 .a-fav:hover .fa-heart,

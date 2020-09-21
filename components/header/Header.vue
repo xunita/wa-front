@@ -104,7 +104,7 @@ export default {}
     margin: 0;
   }
 }
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 413px) {
   .mymini-cart {
     right: 4rem;
   }

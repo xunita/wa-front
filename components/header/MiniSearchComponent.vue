@@ -140,10 +140,10 @@ div.select {
   /* color: #004e66 !important; */
   width: 30% !important;
 }
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 413px) {
   .search-d,
   .d-search {
-    width: 80% !important;
+    width: 75% !important;
   }
 }
 @media screen and (max-width: 370px) {

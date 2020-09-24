@@ -17,6 +17,41 @@
 .is-clickable {
   cursor: pointer;
 }
+.btn-subscribe {
+  background: #004e66e1 !important;
+  border: #004e66e1 !important;
+  color: rgb(255, 255, 255) !important;
+}
+.btn-subscribe:hover,
+.btn-subscribe:focus,
+.btn-subscribe:active {
+  background: #004e66 !important;
+  border: #004e66 !important;
+}
+
+.btn-fb {
+  background: #385a9c !important;
+  border: #385a9c !important;
+  color: rgb(255, 255, 255) !important;
+}
+.btn-fb:hover,
+.btn-fb:focus,
+.btn-fb:active {
+  background: #4267b2 !important;
+  border: #4267b2 !important;
+}
+
+.btn-gl {
+  background: #4267b2c2 !important;
+  border: #4267b2 !important;
+  color: rgb(255, 255, 255) !important;
+}
+.btn-gl:hover,
+.btn-gl:focus,
+.btn-gl:active {
+  background: #4267b2 !important;
+  border: #4267b2 !important;
+}
 .is-unclickable {
   cursor: default !important;
 }

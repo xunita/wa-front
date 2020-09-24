@@ -99,7 +99,7 @@
               "
             >
               <span class="has-text-weight-semibold is-size-6 name"
-                >Omotekesse</span
+                >Sign in</span
               >
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -123,14 +123,16 @@
               <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>
               <nuxt-link
                 class="login mt-1 px-4 underline is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
-                to="#"
+                to="/waloo/login"
                 >Sign In</nuxt-link
               >
               <span
                 class="is-block has-text-weight-semibold is-size-7 pt-1 mb-2"
                 >Or</span
               >
-              <nuxt-link class="mx-4 button btn-subscribe is-block" to="#"
+              <nuxt-link
+                class="mx-4 button btn-subscribe is-block"
+                to="/waloo/register"
                 >Create an account</nuxt-link
               >
             </div>

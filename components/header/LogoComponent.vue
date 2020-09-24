@@ -1,17 +1,19 @@
 <template>
-  <nuxt-link class="logo-link" to="/">
-    <div class="is-flex">
-      <client-only>
-        <a>
-          <span class="icon">
-            <i class="fas fa-bars"></i>
-          </span>
-        </a>
-        <Logo />
-        <h1 class="title-logo pb-1">Waloo</h1>
-      </client-only>
-    </div>
-  </nuxt-link>
+  <div class="is-flex align-center">
+    <client-only>
+      <a>
+        <span class="icon">
+          <i class="fas fa-bars"></i>
+        </span>
+      </a>
+      <nuxt-link class="logo-link" to="/">
+        <div class="is-flex">
+          <Logo />
+          <h1 class="title-logo pb-1">Waloo</h1>
+        </div>
+      </nuxt-link>
+    </client-only>
+  </div>
 </template>
 
 <script>

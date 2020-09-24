@@ -1,12 +1,11 @@
 <template>
-  <div></div>
+  <div class="login"></div>
 </template>
 
 <script>
 export default {
   // layout: 'body',
-  created() {
-    this.$router.push('/waloo')
-  },
 }
 </script>
+
+<style scoped></style>

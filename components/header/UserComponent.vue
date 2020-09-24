@@ -112,7 +112,7 @@
             <div class="dropdown-content has-text-centered">
               <nuxt-link
                 class="login px-4 underline is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
-                to="#"
+                to="/waloo/login"
                 >Sign In</nuxt-link
               >
               <span
@@ -120,7 +120,9 @@
                 >Or</span
               >
               <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>
-              <nuxt-link class="mx-4 mt-2 button btn-subscribe is-block" to="#"
+              <nuxt-link
+                class="mx-4 mt-2 button btn-subscribe is-block"
+                to="/waloo/register"
                 >Create an account</nuxt-link
               >
             </div>
@@ -181,16 +183,5 @@ export default {
 .fa-shopping-cart {
   font-size: 22px !important;
   color: #6e6e6e;
-}
-.btn-subscribe {
-  background: #004e66e1 !important;
-  border: #004e66e1 !important;
-  color: rgb(255, 255, 255) !important;
-}
-.btn-subscribe:hover,
-.btn-subscribe:focus,
-.btn-subscribe:active {
-  background: #004e66 !important;
-  border: #004e66 !important;
 }
 </style>

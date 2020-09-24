@@ -74,7 +74,7 @@ export default {
         'Mini-market',
         'Home & office',
         'Electronics',
-        'Phone &tablet',
+        'Phone & tablet',
         'Fashion',
         'Computer',
         'Video games',

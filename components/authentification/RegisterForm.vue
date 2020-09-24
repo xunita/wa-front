@@ -132,11 +132,11 @@
                   class="input"
                   type="email"
                   placeholder="Enter your email"
-                  @keyup="checkEmail"
+                  required
                 />
               </p>
               <span v-if="emailInvalid" class="is-red is-size-7"
-                >Email is required. Ex: yaya@gmail.com
+                >A valid email is required. Ex: yaya@gmail.com
               </span>
             </div>
             <div class="field">
@@ -146,7 +146,7 @@
                   class="input"
                   type="text"
                   placeholder="Enter your name"
-                  @keyup="checkName"
+                  required
                 />
               </p>
               <span v-if="nameEmpty" class="is-red is-size-7">
@@ -277,22 +277,16 @@ export default {
     },
   },
   methods: {
-    checkEmail() {
-      if (this.email !== '') {
-        if (this.validEmail) this.emailInvalid = false
-        else this.emailInvalid = true
-      } else this.emailInvalid = false
-    },
     checkName() {
       if (this.name !== '') {
         this.nameEmpty = false
       } else this.nameEmpty = true
     },
     register() {
-      if (this.email === '') {
+      if (this.email === '' || !this.validEmail) {
         this.emailInvalid = true
       } else this.emailInvalid = false
-      if (this.name === '') this.nameEmpty = true
+      if (this.name === '' || !this.name.trim().length) this.nameEmpty = true
       else this.nameEmpty = false
       if (this.everyThingOk) {
         // this.$store.dispatch('register').then(() => {

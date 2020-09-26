@@ -1,5 +1,4 @@
 export default {
-  loading: false,
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
@@ -69,6 +68,7 @@ export default {
     '@nuxtjs/bulma',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
@@ -78,8 +78,34 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://127.0.0.1:8000/api',
+    baseURL: 'https://waloo-b.herokuapp.com/api',
     credentials: true,
+  },
+  auth: {
+    localStorage: false,
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/',
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: 'login',
+            method: 'post',
+            propertyName: 'token',
+          },
+          logout: { url: 'logout', method: 'get' },
+          user: { url: 'AuthUser', method: 'get', propertyName: 'user' },
+        },
+        // tokenRequired: true,
+        // tokenType: 'bearer',
+        // globalToken: true,
+        //autoFetchUser: true
+      },
+    },
   },
   /*
    ** Content module configuration

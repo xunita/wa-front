@@ -1,7 +1,7 @@
 <template>
   <div class="user">
     <client-only>
-      <div v-if="isLogged" class="user-auth">
+      <div v-if="this.$auth.loggedIn" class="user-auth">
         <div class="dropdown dd-btn" :class="{ 'is-active': isShown }">
           <div class="dropdown-trigger">
             <button
@@ -16,7 +16,7 @@
               "
             >
               <span class="has-text-weight-semibold is-size-6 name"
-                >John Doe</span
+                >Hi, {{ this.$auth.user.name | capitalize }}</span
               >
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -135,6 +135,13 @@
 
 <script>
 export default {
+  filters: {
+    capitalize(value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    },
+  },
   data() {
     return {
       hasNotif: false,

@@ -1,10 +1,12 @@
 <template>
-  <div class="login"></div>
+  <div class="register">
+    <AuthForm :registrering="false" :logging="true" />
+  </div>
 </template>
 
 <script>
 export default {
-  // layout: 'body',
+  layout: 'body',
 }
 </script>
 

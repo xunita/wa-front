@@ -1,5 +1,5 @@
 <template>
-  <div class="favorite" :class="{ expand: isLogged }">
+  <div class="favorite" :class="{ expand: this.$auth.loggedIn }">
     <client-only>
       <a class="a-fav">
         <span v-if="hasFavorite" key="stared" class="icon">
@@ -9,8 +9,8 @@
           <i class="far fa-heart"></i>
         </span>
       </a>
-      <span v-if="isLogged" class="px-4"></span>
-      <a v-if="isLogged" class="a-fav">
+      <span v-if="this.$auth.loggedIn" class="px-4"></span>
+      <a v-if="this.$auth.loggedIn" class="a-fav">
         <span v-if="!hasNotif" key="willstared" class="icon">
           <i class="far fa-bell"></i>
         </span>

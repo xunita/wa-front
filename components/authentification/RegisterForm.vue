@@ -47,7 +47,7 @@
                   <span class="is-block has-text-weight-semibold is-size-6"
                     >Sign up with Google</span
                   >
-                  <span class="icon ml-2 is-block">
+                  <span class="icon ml-2 is-block icogoogle">
                     <svg
                       viewBox="0 0 533.5 544.3"
                       width="16"
@@ -84,7 +84,7 @@
                     <span class="is-block has-text-weight-semibold is-size-6"
                       >Google</span
                     >
-                    <span class="icon ml-2 is-block">
+                    <span class="icon ml-2 is-block icogoogle">
                       <svg
                         viewBox="0 0 533.5 544.3"
                         width="16"
@@ -122,6 +122,13 @@
         </div>
         <div class="my-register column">
           <div class="d-my-register m-centered">
+            <div
+              v-if="this.$store.state.emailUsed"
+              class="notification is-danger m-centered is-size-6 has-text-centered mt-6"
+            >
+              <button class="delete" @click="close"></button>
+              Email already exists.
+            </div>
             <h5 class="title is-6 is-block mb-5 has-text-centered">
               Create an account using your email.
             </h5>
@@ -236,6 +243,7 @@
 
 <script>
 export default {
+  auth: 'guest',
   data() {
     return {
       email: '',
@@ -276,26 +284,41 @@ export default {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email)
     },
   },
+  mounted() {
+    this.$store.commit('hasRegistered', false)
+    this.$store.commit('hasMailUsed', false)
+  },
   methods: {
-    checkName() {
-      if (this.name !== '') {
-        this.nameEmpty = false
-      } else this.nameEmpty = true
-    },
-    register() {
+    checkNameMail() {
       if (this.email === '' || !this.validEmail) {
         this.emailInvalid = true
       } else this.emailInvalid = false
       if (this.name === '' || !this.name.trim().length) this.nameEmpty = true
       else this.nameEmpty = false
+    },
+    close() {
+      this.$store.commit('hasMailUsed', false)
+    },
+    register() {
+      this.checkNameMail()
       if (this.everyThingOk) {
-        // this.$store.dispatch('register').then(() => {
-        //   this.$store.commit('hasRegistered', true)
-        //   setTimeout(function () {
-        //     this.$store.push('/waloo/login')
-        //   }, 1000)
-        // })
-        alert('ok')
+        const infos = {
+          email: this.email,
+          name: this.name,
+          password: this.password,
+          surname: '',
+          cellphone: '',
+          adress: '',
+        }
+        if (this.surname !== '') infos.surname = this.surname
+        if (this.cellphone !== '') infos.cellphone = this.cellphone
+        if (this.adress !== '') infos.adress = this.adress
+        this.$store.commit('registerInfo', infos)
+        this.$store.commit('hasRegistered', false)
+        this.$store.commit('hasMailUsed', false)
+        this.$store.dispatch('register').then(() => {
+          if (this.$store.state.registered) this.$router.push('/waloo/login')
+        })
       }
     },
   },
@@ -303,10 +326,16 @@ export default {
 </script>
 
 <style scoped>
+.notification {
+  width: 100% !important;
+}
+.icogoogle {
+  margin-top: 0.4rem !important;
+}
 .register-form {
   font-size: 8px !important;
   position: relative;
-  top: 2rem;
+  top: 3rem;
   bottom: 2rem;
   /* height: 90%;
   width: 100%; */

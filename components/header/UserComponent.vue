@@ -77,11 +77,12 @@
                 >
               </a>
               <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>
-              <nuxt-link
-                class="login mt-1 button logout-btn mx-4 mt-2 is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
-                to="#"
-                >Logout</nuxt-link
+              <button
+                class="has-text-centered m-centered mt-1 button logout-btn mt-2 is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
+                @click="$auth.logout()"
               >
+                Logout
+              </button>
             </div>
           </div>
         </div>

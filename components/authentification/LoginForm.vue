@@ -194,6 +194,9 @@
 
 <script>
 export default {
+  loading: {
+    continuous: true,
+  },
   auth: 'guest',
   data() {
     return {

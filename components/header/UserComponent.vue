@@ -31,7 +31,7 @@
                 </span>
                 <span
                   class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
-                  >My profile</span
+                  >Profile</span
                 >
               </a>
               <a class="a-cart is-flex align-center dropdown-item">
@@ -43,7 +43,7 @@
                 </span>
                 <span
                   class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
-                  >My notifications</span
+                  >Notifications</span
                 >
               </a>
               <a class="a-cart is-flex align-center dropdown-item">
@@ -55,7 +55,7 @@
                 </span>
                 <span
                   class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
-                  >My favorites</span
+                  >Favorites</span
                 >
               </a>
               <a class="a-cart is-flex align-center dropdown-item">
@@ -64,7 +64,7 @@
                 </span>
                 <span
                   class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
-                  >My orders</span
+                  >Orders</span
                 >
               </a>
               <a class="a-cart is-flex align-center dropdown-item">
@@ -73,7 +73,7 @@
                 </span>
                 <span
                   class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
-                  >My orders history</span
+                  >Orders history</span
                 >
               </a>
               <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>

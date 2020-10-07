@@ -4,7 +4,12 @@
       <div class="is-flex search-d">
         <div class="select">
           <select>
-            <option v-for="(categ, key) in category" :key="key">
+            <option
+              v-for="(categ, key) in category"
+              :key="key"
+              class="has-text-weight-semibold is-size-6"
+              :class="{ all: categ === 'All categories' }"
+            >
               {{ categ }}
             </option>
           </select>
@@ -120,6 +125,11 @@ export default {
 </script>
 
 <style scoped>
+.all {
+  color: #004e66;
+  font-size: 18px !important;
+  font-weight: normal !important;
+}
 div.select::after {
   /* color: #004e66 !important; */
   border-color: #004e66 !important;
@@ -127,6 +137,7 @@ div.select::after {
 }
 div.select select {
   outline: none !important;
+  font-size: 16px !important;
   position: relative;
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
@@ -184,7 +195,7 @@ div.select {
 }
 .search-input {
   height: 40px;
-  font-size: medium;
+  font-size: 15.5px !important;
   width: 390px !important;
   padding-top: 0.4rem;
   padding-right: 64px !important;

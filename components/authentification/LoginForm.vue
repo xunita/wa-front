@@ -246,7 +246,6 @@ export default {
         this.$store
           .dispatch('login')
           .then(() => {
-            console.log(this.$auth.user)
             if (this.$auth.loggedIn) this.$router.push('/')
           })
           .catch(() => {

@@ -78,7 +78,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://waloo-b.herokuapp.com/api',
+    baseURL: 'https://waback.herokuapp.com/api',
     credentials: true,
   },
   auth: {

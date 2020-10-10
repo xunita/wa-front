@@ -249,7 +249,7 @@ export default {
             if (this.$auth.loggedIn) this.$router.push('/')
           })
           .catch(() => {
-            console.log("********** You can't log******")
+            // console.log("********** You can't log******")
           })
       }
     },

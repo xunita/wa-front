@@ -82,7 +82,7 @@
               </a>
               <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>
               <button
-                class="has-text-centered m-centered mt-1 button logout-btn mt-2 is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
+                class="has-text-centered m-centered mt-1 button logout-btn px-6 mt-2 is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
                 @click="logout"
               >
                 Logout

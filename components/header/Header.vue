@@ -73,14 +73,14 @@ export default {}
     display: block !important;
   }
 }
-@media screen and (max-width: 797px) {
+@media screen and (max-width: 830px) {
   .search-api {
     display: none !important;
   }
   .search-mini {
     display: flex !important;
     margin-left: 15% !important;
-    width: 80% !important;
+    width: 100% !important;
   }
   .right-brand {
     width: fit-content !important;
@@ -89,14 +89,21 @@ export default {}
     float: right;
   }
 }
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 560px) {
+  .search-mini {
+    display: flex !important;
+    margin-left: 0% !important;
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 400px) {
   .big-cart {
     display: none !important;
   }
   .mymini-cart {
     display: block !important;
     position: relative;
-    right: 2rem;
+    right: 3.5rem;
   }
   .search-mini {
     margin-left: 0% !important;
@@ -104,19 +111,14 @@ export default {}
     margin: 0;
   }
 }
-@media screen and (max-width: 413px) {
-  .mymini-cart {
-    right: 5rem;
-  }
-}
 @media screen and (max-width: 370px) {
   .mymini-cart {
-    right: 9rem;
+    right: 5.5rem;
   }
 }
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 340px) {
   .mymini-cart {
-    right: 9rem;
+    right: 7rem;
   }
 }
 .right {

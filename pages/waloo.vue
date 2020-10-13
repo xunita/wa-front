@@ -27,7 +27,7 @@ export default {
   background-color: #f9f9f9 !important;
 }
 .waloo-head {
-  z-index: 999;
+  z-index: 9999;
   box-shadow: 0 0.5em 1em -0.95em rgba(10, 10, 10, 0.164),
     0 0px 0 0px rgba(10, 10, 10, 0.068);
 }

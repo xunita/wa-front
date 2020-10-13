@@ -45,6 +45,6 @@ export default {
 }
 .a-fav:hover .fa-heart,
 .a-fav:hover .fa-bell {
-  color: #004e66 !important;
+  color: #028300 !important;
 }
 </style>

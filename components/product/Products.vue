@@ -70,7 +70,7 @@ export default {
 
 <style scoped>
 .see-post {
-  color: #004e66;
+  color: #028300;
 }
 .see-post:hover {
   text-decoration: underline;
@@ -105,7 +105,7 @@ export default {
   font-size: 44px;
   width: 40px !important;
   height: 40px !important;
-  color: #004e66;
+  color: #028300;
   opacity: 0;
   border: none;
   background-color: white;
@@ -113,11 +113,11 @@ export default {
 .fa-chevron-right,
 .fa-chevron-left {
   font-size: 36px;
-  color: #00000079;
+  color: #0000008a;
 }
 .prev:hover .fa-chevron-circle-left,
 .next:hover .fa-chevron-circle-right {
-  animation: 0.4s appearZ;
+  animation: 0.1s appearZ;
   opacity: 1;
   border-radius: 290486px;
   /* -webkit-box-shadow: 0 0 5px rgb(0, 0, 0, 0.158);
@@ -294,7 +294,6 @@ export default {
 @keyframes appearZ {
   0% {
     transform: translateZ(10px);
-    opacity: 0;
   }
 }
 </style>

@@ -9,7 +9,7 @@
       <nuxt-link class="logo-link" to="/">
         <div class="is-flex">
           <Logo />
-          <h1 class="title-logo pb-1">Waloo</h1>
+          <h1 class="title-logo is-green pb-1">Waloo</h1>
         </div>
       </nuxt-link>
     </client-only>

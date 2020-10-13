@@ -5,6 +5,7 @@
         <span class="icon is-block">
           <i class="fas fa-shopping-cart"></i>
         </span>
+        <span class="badge">7</span>
         <span
           class="my-cart is-block pl-1 has-text-weight-semibold is-color-black"
           >My cart</span
@@ -36,8 +37,11 @@ export default {
   font-size: 16px !important;
   color: #6e6e6e;
 }
+.a-cart {
+  position: relative;
+}
 .a-cart:hover .fa-shopping-cart,
 .a-cart:hover .my-cart {
-  color: #004e66 !important;
+  color: #028300 !important;
 }
 </style>

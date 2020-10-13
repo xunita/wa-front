@@ -20,25 +20,27 @@
       <figure class="image is-1by1">
         <img
           class="prod-img"
-          src="https://tn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/94/2362/1.jpg"
+          src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/farm-products-video-ad-design-template-1a4a8132e768959dd45c81ad1a5cb219_screen.jpg?ts=1574938455"
           alt="Placeholder image"
         />
       </figure>
     </div>
     <div>
       <div class="px-2 is-flex info">
-        <span
-          class="is-block fited-width is-color-white reductible is-border-radius-5px has-text-weight-semibold is-pulled-right"
-          >-14%</span
-        >
         <span class="tittle is-block my-1"
           >Tecno Spark 5 Air - 7"- 2 Go - 32 Go - Jadeite Ice - Garantie 1
           An</span
         >
-        <span
-          class="price is-size-6 is-block has-text-weight-semibold is-color-004e66"
-          >$ 998,45</span
-        >
+        <div class="is-flex justy-between">
+          <span
+            class="price is-size-6 is-block has-text-weight-semibold is-color-028300"
+            >$ 998,45</span
+          >
+          <span
+            class="is-block fited-width is-color-028300 reductible is-border-radius-5px has-text-weight-semibold"
+            >-14%</span
+          >
+        </div>
         <span class="priceold is-size-7 is-block has-text-weight-semibold"
           >$ 1350,45</span
         >
@@ -92,43 +94,44 @@ export default {
 <style scoped>
 .fa-heart {
   font-size: 24px !important;
-  color: #007497;
+  color: #868686;
 }
 .btn-fav .icon {
   width: 32px !important;
   height: 32px !important;
   border-radius: 290486px;
-  background-color: rgba(255, 255, 255, 0.589);
 }
 .btn-fav .icon .fa-heart {
   width: 24px !important;
   height: 24px !important;
   border-radius: 290486px;
 }
-.unfilled:hover .icon {
-  background-color: rgba(255, 255, 255, 1);
+.unfilled:hover .icon .fa-heart,
+.filled:hover .icon .fa-heart {
+  background-color: transparent !important;
 }
-
+.unfilled:hover .icon,
+.filled:hover .icon {
+  box-shadow: 0 0 10px rgb(196, 196, 196);
+  -webkit-box-shadow: 0 0 10px rgb(196, 196, 196);
+  background-color: transparent !important;
+}
 .filled .fa-heart {
   font-size: 24px !important;
-  color: #006a8a;
+  color: #888888;
 }
 .filled .icon {
   width: 32px !important;
   height: 32px !important;
   border-radius: 290486px;
-  background-color: #004e6600;
 }
 .filled .icon .fa-heart {
   width: 24px !important;
   height: 24px !important;
   border-radius: 290486px;
 }
-.filled:hover .icon {
-  background-color: #ffffff3a;
-}
 .filled:hover .icon .fa-heart {
-  color: #007497;
+  color: #949494;
 }
 .btn-fav {
   position: absolute;
@@ -136,7 +139,7 @@ export default {
   right: 0;
 }
 .see-post {
-  color: #004e66;
+  color: #028300;
 }
 .see-post:hover {
   text-decoration: underline;
@@ -166,65 +169,12 @@ export default {
 .most-card {
   padding-bottom: 0rem;
 }
-.fa-chevron-circle-right,
-.fa-chevron-circle-left {
-  font-size: 44px;
-  width: 40px !important;
-  height: 40px !important;
-  color: #004e66;
-  opacity: 0;
-  border: none;
-  background-color: white;
-}
-.fa-chevron-right,
-.fa-chevron-left {
-  font-size: 36px;
-  color: #00000079;
-}
-.prev:hover .fa-chevron-circle-left,
-.next:hover .fa-chevron-circle-right {
-  animation: 0.4s appearZ;
-  opacity: 1;
-  border-radius: 290486px;
-  /* -webkit-box-shadow: 0 0 5px rgb(0, 0, 0, 0.158);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.158); */
-}
-.next .fa-chevron-right,
-.prev .fa-chevron-left {
-  border-radius: 290486px;
-  /* -webkit-box-shadow: 0 0 5px rgb(0, 0, 0, 0.158);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.158); */
-}
-.prev {
-  position: absolute;
-  z-index: 999;
-  top: 45%;
-  left: 0;
-}
-.next {
-  position: absolute;
-  z-index: 999;
-  top: 45%;
-  right: 0;
-}
+
 .db-prod {
   position: relative;
   overflow: scroll;
   overflow-x: hidden;
   z-index: 0;
-}
-::-webkit-scrollbar {
-  width: 5px; /* Remove scrollbar space */
-  border-radius: 10px;
-  animation: 0.2s appear;
-  background: transparent; /* Optional: just make scrollbar invisible */
-}
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-.db-prod:hover::-webkit-scrollbar-thumb {
-  background: #028300;
 }
 .vvcard:hover {
   cursor: pointer;
@@ -340,7 +290,7 @@ export default {
 .reductible {
   align-self: flex-end;
   padding: 0rem 0.3rem 0rem 0.3rem;
-  background-color: #007497;
+  background-color: rgba(2, 131, 0, 0.192);
 }
 .tittle {
   text-overflow: ellipsis;

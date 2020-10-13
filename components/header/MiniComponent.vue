@@ -1,7 +1,11 @@
 <template>
   <div class="mini">
     <client-only>
-      <div v-if="this.$auth.loggedIn" class="mini-auth">
+      <div
+        v-if="this.$auth.loggedIn"
+        class="mini-auth"
+        :class="{ 'is-hidden': isauthenticating }"
+      >
         <div class="dropdown dd-btn" :class="{ 'is-active': isShown }">
           <div class="dropdown-trigger">
             <button
@@ -15,7 +19,7 @@
                 }
               "
             >
-              <span class="has-text-weight-semibold is-size-6 name"
+              <span class="has-text-weight-semibold is-size-6 name is-color-4a"
                 >Hi, {{ this.$auth.user.name | capitalize }}</span
               >
               <span class="icon is-small">
@@ -79,7 +83,7 @@
               <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>
               <button
                 class="has-text-centered m-centered mt-1 button logout-btn mt-2 is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
-                @click="$auth.logout()"
+                @click="logout"
               >
                 Logout
               </button>
@@ -87,7 +91,11 @@
           </div>
         </div>
       </div>
-      <div v-else class="mini-unauth">
+      <div
+        v-else
+        class="mini-unauth"
+        :class="{ 'is-hidden': isauthenticating }"
+      >
         <div class="dropdown dd-btn" :class="{ 'is-active': isShownReg }">
           <div class="dropdown-trigger">
             <button
@@ -101,11 +109,14 @@
                 }
               "
             >
+              <span class="icon">
+                <i class="fas fa-user"></i>
+              </span>
               <span class="has-text-weight-semibold is-size-6 name"
                 >Sign in</span
               >
               <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                <i class="fas fa-angle-down"></i>
               </span>
             </button>
           </div>
@@ -125,12 +136,12 @@
               </a>
               <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>
               <nuxt-link
-                class="login mt-1 px-4 underline is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
+                class="login mt-1 px-4 pt-2 underline is-color-028300-hover is-block has-text-weight-semibold is-color-black"
                 to="/waloo/login"
                 >Sign In</nuxt-link
               >
               <span
-                class="is-block has-text-weight-semibold is-size-7 pt-1 mb-2"
+                class="is-block has-text-weight-semibold is-size-6 pt-1 mb-2"
                 >Or</span
               >
               <nuxt-link
@@ -162,6 +173,7 @@ export default {
       isShown: false,
       isShownReg: false,
       hasFavorite: false,
+      isauthenticating: false,
     }
   },
   methods: {
@@ -171,11 +183,24 @@ export default {
     hideItReg() {
       this.isShownReg = false
     },
+    logout() {
+      this.isauthenticating = true
+      this.$auth.logout()
+      this.isauthenticating = false
+    },
   },
 }
 </script>
 
 <style scoped>
+.fa-user,
+.fa-angle-down {
+  font-size: 18px !important;
+  color: #6e6e6e;
+}
+.btn-user:hover .fa-user {
+  color: #028300 !important;
+}
 .barr {
   background-color: #f1f1f1;
 }
@@ -193,7 +218,7 @@ export default {
 }
 .btn-user:hover .fa-angle-down,
 .btn-user:hover .name {
-  color: #004e66;
+  color: #028300;
 }
 .btn-user {
   border: none !important;
@@ -204,14 +229,14 @@ export default {
   color: #6e6e6e;
 }
 .btn-subscribe {
-  background: #004e66e1 !important;
-  border: #004e66e1 !important;
-  color: rgb(255, 255, 255) !important;
+  background: #028300 !important;
+  border: #028300 !important;
+  color: white !important;
 }
 .btn-subscribe:hover,
 .btn-subscribe:focus,
 .btn-subscribe:active {
-  background: #004e66 !important;
-  border: #004e66 !important;
+  background: #027900 !important;
+  border: #027900 !important;
 }
 </style>

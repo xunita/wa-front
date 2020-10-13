@@ -16,7 +16,7 @@
         </div>
         <input
           v-model="search"
-          placeholder="Iphone 11 pro Max..."
+          placeholder="Tomato, Oignon..."
           type="text"
           class="search-input has-a-border px-4 is-border-radius-5px has-no-outline border-color-gray"
           @input="make_search"
@@ -76,17 +76,14 @@ export default {
       titles: [],
       category: [
         'All categories',
-        'Mini-market',
-        'Home & office',
-        'Electronics',
-        'Phone & tablet',
-        'Fashion',
-        'Computer',
-        'Video games',
-        'Sports',
-        'Auto & motorcycle',
-        'Garden & outdoor',
-        'Others categories',
+        'Livestock',
+        'Poultry',
+        'Fruits',
+        'Honey',
+        'Cereals',
+        'Oilseeds',
+        'Vegetables',
+        'Tobacco',
       ],
     }
   },
@@ -126,13 +123,13 @@ export default {
 
 <style scoped>
 .all {
-  color: #004e66;
+  color: #028300;
   font-size: 18px !important;
   font-weight: normal !important;
 }
 div.select::after {
   /* color: #004e66 !important; */
-  border-color: #004e66 !important;
+  border-color: #028300 !important;
   font-size: 12px !important;
 }
 div.select select {
@@ -149,7 +146,6 @@ div.select select:active {
 }
 div.select {
   /* color: #004e66 !important; */
-  width: 186px !important;
 }
 .delete {
   margin-top: 0.78rem;
@@ -223,7 +219,7 @@ div.select {
   height: 40px !important;
 }
 .search-btn:hover {
-  background-color: #004e66;
+  background-color: #028300;
   animation: 0.5s appearZ;
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;

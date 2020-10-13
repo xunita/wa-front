@@ -21,15 +21,15 @@ body {
   cursor: pointer;
 }
 .btn-subscribe {
-  background: #004e66e1 !important;
-  border: #004e66e1 !important;
-  color: rgb(255, 255, 255) !important;
+  background: #028300 !important;
+  border: #028300 !important;
+  color: white !important;
 }
 .btn-subscribe:hover,
 .btn-subscribe:focus,
 .btn-subscribe:active {
-  background: #004e66 !important;
-  border: #004e66 !important;
+  background: #027900 !important;
+  border: #027900 !important;
 }
 
 .btn-fb {
@@ -91,11 +91,28 @@ body {
 .is-color-4a {
   color: #4a4a4a;
 }
+.badge {
+  background-color: #028300;
+  border: 2px solid white;
+  color: white !important;
+  font-weight: 800;
+  padding: 0 0.2rem 0 0.2rem;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 290486px;
+  position: absolute;
+  top: -0.6rem;
+  left: 10%;
+  font-size: x-small;
+}
 .is-red {
   color: red !important;
 }
 .is-color-004e66 {
   color: #004e66 !important;
+}
+.is-color-028300 {
+  color: #028300 !important;
 }
 .is-color-white {
   color: white !important;
@@ -109,6 +126,10 @@ body {
 .is-color-004e66-hover:hover,
 .is-color-004e66-hover:active {
   color: #004e66 !important;
+}
+.is-color-028300-hover:hover,
+.is-color-028300-hover:active {
+  color: #028300 !important;
 }
 .is-bgcolor-white {
   background-color: white !important;

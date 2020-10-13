@@ -1,6 +1,7 @@
 <template>
   <div class="body-home">
     <Products />
+    <Home class="mt-6" />
   </div>
 </template>
 
@@ -12,6 +13,11 @@ export default {
 <style scoped>
 .body-home {
   width: 100%;
-  height: 500px;
+  animation: 1s appear;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
 }
 </style>

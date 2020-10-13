@@ -83,7 +83,7 @@
             <figure class="image">
               <img
                 class="is-border-radius-5px ads-img"
-                src="http://localhost:3000/images/presentation/consumer.jpg"
+                src="/images/presentation/consumer.jpg"
               />
             </figure>
           </div>

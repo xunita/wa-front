@@ -122,6 +122,8 @@ div.select select:active {
 div.select {
   /* color: #004e66 !important; */
   width: 30% !important;
+  position: relative;
+  left: 0.1rem;
 }
 @media screen and (max-width: 400px) {
   .search-d,

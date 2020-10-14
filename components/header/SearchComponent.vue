@@ -97,9 +97,9 @@ export default {
       })
     },
   },
-  beforeMount() {
-    this.making_search()
-  },
+  // beforeMount() {
+  //   this.making_search()
+  // },
   methods: {
     async making_search() {
       const data = await this.$axios.$get('getAllProductsTitle')
@@ -146,6 +146,8 @@ div.select select:active {
 }
 div.select {
   /* color: #004e66 !important; */
+  position: relative;
+  left: 0.1rem;
 }
 .delete {
   margin-top: 0.78rem;

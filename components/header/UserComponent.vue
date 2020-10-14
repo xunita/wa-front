@@ -31,7 +31,7 @@
             <div class="dropdown-content has-text-centered">
               <a class="a-cart is-flex align-center dropdown-item">
                 <span class="icon is-block">
-                  <i class="far fa-user"></i>
+                  <i class="fas fa-user"></i>
                 </span>
                 <span
                   class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
@@ -39,11 +39,8 @@
                 >
               </a>
               <a class="a-cart is-flex align-center dropdown-item">
-                <span v-if="hasNotif" key="wstared" class="icon is-block">
+                <span key="wstared" class="icon is-block">
                   <i class="fas fa-bell"></i>
-                </span>
-                <span v-else key="wunstared" class="icon is-block">
-                  <i class="far fa-bell"></i>
                 </span>
                 <span
                   class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
@@ -51,11 +48,8 @@
                 >
               </a>
               <a class="a-cart is-flex align-center dropdown-item">
-                <span v-if="hasFavorite" key="azstared" class="icon is-block">
+                <span key="azstared" class="icon is-block">
                   <i class="fas fa-heart"></i>
-                </span>
-                <span v-else key="azunstared" class="icon is-block">
-                  <i class="far fa-heart"></i>
                 </span>
                 <span
                   class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
@@ -80,7 +74,7 @@
                   >Orders history</span
                 >
               </a>
-              <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>
+              <a class="barr is-unclickable mt-2 mb-1"></a>
               <button
                 class="has-text-centered m-centered mt-1 button logout-btn mt-2 px-6 is-color-004e66-hover is-block has-text-weight-semibold is-color-black"
                 @click="logout"
@@ -124,9 +118,9 @@
                 class="is-block has-text-weight-semibold is-size-6 pt-1 mb-2"
                 >Or</span
               >
-              <a class="dropdown-item barr is-unclickable mt-2 mb-1"></a>
+              <a class="barr is-unclickable mt-2 mb-1"></a>
               <nuxt-link
-                class="mx-4 mt-2 button btn-subscribe is-block"
+                class="mx-4 mt-2 button btn-subscribes is-block"
                 to="/waloo/register"
                 >Create an account</nuxt-link
               >
@@ -174,16 +168,26 @@ export default {
 </script>
 
 <style scoped>
-.fa-user,
+.btn-subscribes {
+  background: #004e66e1 !important;
+  border: #004e66e1 !important;
+  color: rgb(255, 255, 255) !important;
+}
+.btn-subscribes:hover,
+.btn-subscribes:focus,
+.btn-subscribes:active {
+  background: #004e66 !important;
+  border: #004e66 !important;
+}
+[class*='fa-'],
 .fa-angle-down {
-  font-size: 18px !important;
-  color: #6e6e6e;
+  color: #6e6e6e !important;
 }
 .btn-user:hover .fa-user {
   color: #028300 !important;
 }
 .barr {
-  background-color: #f1f1f1;
+  height: 6px !important;
 }
 .dd-btn {
   position: relative;

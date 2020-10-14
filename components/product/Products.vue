@@ -34,7 +34,7 @@
               </span>
             </div>
           </client-only>
-          <div v-for="i in 8" :key="i" class="column prod-taille m-centered">
+          <div v-for="i in 8" :key="i" class="column m-centered">
             <Product />
           </div>
         </div>
@@ -78,24 +78,10 @@ export default {
 .products-pop {
   position: relative;
   top: 3rem;
-  margin-top: 4rem;
   margin: 0 auto;
 }
 .wal:hover {
   color: #028300 !important;
-}
-.prod-img {
-  width: 100% !important;
-}
-.prod-taille {
-  flex: none;
-  width: 205.2px;
-  z-index: 0;
-}
-@media screen and (max-width: 798px) {
-  .products-pop {
-    margin-top: 4rem !important;
-  }
 }
 .most-card {
   padding-bottom: 0rem;

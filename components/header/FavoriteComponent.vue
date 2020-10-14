@@ -1,23 +1,21 @@
 <template>
   <div class="favorite" :class="{ expand: this.$auth.loggedIn }">
     <client-only>
-      <a class="a-fav">
-        <span v-if="hasFavorite" key="stared" class="icon">
+      <nuxt-link to="/waloo/myfavorites" class="a-fav">
+        <span key="stared" class="icon">
           <i class="fas fa-heart"></i>
         </span>
-        <span v-else key="unstared" class="icon">
-          <i class="far fa-heart"></i>
-        </span>
-      </a>
+      </nuxt-link>
       <span v-if="this.$auth.loggedIn" class="px-4"></span>
-      <a v-if="this.$auth.loggedIn" class="a-fav">
-        <span v-if="!hasNotif" key="willstared" class="icon">
-          <i class="far fa-bell"></i>
-        </span>
-        <span v-else key="willunstared" class="icon">
+      <nuxt-link
+        v-if="this.$auth.loggedIn"
+        to="/waloo/user/mynotifications"
+        class="a-fav"
+      >
+        <span key="willstared" class="icon">
           <i class="fas fa-bell"></i>
         </span>
-      </a>
+      </nuxt-link>
     </client-only>
   </div>
 </template>

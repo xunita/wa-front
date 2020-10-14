@@ -8,7 +8,7 @@
     </div>
     <div style="height: 55px"></div>
     <!-- after header, body -->
-    <div>
+    <div class="best-child">
       <nuxt-child />
     </div>
     <div class="footer"></div>
@@ -25,6 +25,11 @@ export default {
   width: 100%;
   animation: 0.5s appear;
   background-color: #f9f9f9 !important;
+}
+@media screen and (max-width: 830px) {
+  .best-child {
+    margin-top: 3.5rem !important;
+  }
 }
 .waloo-head {
   z-index: 9999;

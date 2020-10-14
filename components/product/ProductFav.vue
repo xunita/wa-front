@@ -2,18 +2,9 @@
   <div class="vvcard the-prod">
     <div class="card-image">
       <client-only>
-        <a
-          v-if="hasFavorite"
-          title="Retire the favorites"
-          class="btn-fav filled"
-        >
-          <span key="azstared" class="icon my-2 mx-1">
+        <a title="Retire the favorites" class="btn-fav filled">
+          <span class="icon my-2 mx-1">
             <i class="fas fa-heart"></i>
-          </span>
-        </a>
-        <a v-else title="Add to the favorites" class="btn-fav unfilled">
-          <span key="zaunstared" class="icon my-2 mx-1">
-            <i class="far fa-heart"></i>
           </span>
         </a>
       </client-only>
@@ -44,38 +35,6 @@
         <span class="priceold is-size-7 is-block has-text-weight-semibold"
           >$ 1350,45</span
         >
-        <div class="supp">
-          <div class="add-cart is-flex justy-between">
-            <div class="is-flex-self-end">
-              <span class="buttonss btn-available has-text-weight-semibold">
-                Available
-              </span>
-            </div>
-            <div class="field">
-              <div class="control">
-                <label class="is-size-7 has-text-weight-semibold" for="qty"
-                  >Quantity</label
-                ><br />
-                <input
-                  id="qty"
-                  class="input qte"
-                  type="number"
-                  placeholder="Qty"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="m-centered add-cart-btn my-2">
-            <button class="button btnbtn btn-subscribe is-size-7">
-              <client-only>
-                <span class="icon">
-                  <i class="fas fa-shopping-cart"></i>
-                </span>
-              </client-only>
-              <span>Add to cart</span>
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -97,10 +56,6 @@ export default {
   width: 205.2px;
   z-index: 0;
 }
-.fa-heart {
-  font-size: 24px !important;
-  color: #868686;
-}
 .btn-fav .icon {
   width: 32px !important;
   height: 32px !important;
@@ -121,9 +76,9 @@ export default {
   -webkit-box-shadow: 0 0 10px rgb(196, 196, 196);
   background-color: transparent !important;
 }
-.filled .fa-heart {
-  font-size: 24px !important;
-  color: #888888;
+.filled .icon .fa-heart {
+  font-size: 16px !important;
+  color: #999999;
 }
 .filled .icon {
   width: 32px !important;
@@ -183,14 +138,12 @@ export default {
 }
 .vvcard:hover {
   cursor: pointer;
-  animation: 0.2s appear;
   background-color: white;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0px 0 1px rgba(10, 10, 10, 0.02);
   color: #4a4a4a;
   max-width: 100%;
   position: relative;
-  transform: scale(1.05);
 }
 .vvcard:hover .supp {
   display: block !important;

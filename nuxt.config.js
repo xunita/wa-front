@@ -85,7 +85,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://127.0.0.1:8000/api',
+    baseURL: 'https://waback.herokuapp.com/api',
     credentials: true,
   },
   auth: {

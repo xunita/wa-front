@@ -12,7 +12,7 @@
           'notd-d-pre': this.$auth.loggedIn,
         }"
       >
-        <div v-if="!isLogged" class="column">
+        <div v-if="isLogged" class="column">
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
@@ -103,7 +103,7 @@
 export default {
   computed: {
     isLogged() {
-      return this.$auth.loggedIn
+      return this.$auth.loggedIn === false
     },
   },
 }

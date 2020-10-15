@@ -1,86 +1,27 @@
 <template>
   <div class="wawa mt-5 box">
     <div class="wawa-fils py-5">
-      <h6 class="title is-6 has-text-centered">
+      <h6 v-if="this.$auth.loggedIn" class="title is-6 has-text-centered">
+        Post about a product or share on your favourites social media, sell your
+        products directly to consumer or invest in a farmer.
+      </h6>
+      <h6 v-else class="title is-6 has-text-centered">
         Buy from your favourites farmers, sell your products directly to
         consumer or invest in a farmer.
       </h6>
-      <div
-        v-if="isLogged"
-        class="columns mt-5"
-        :class="{
-          'd-d-pre': !this.$auth.loggedIn,
-          'notd-d-pre': this.$auth.loggedIn,
-        }"
-      >
+      <div class="columns mt-5 d-d-pre">
         <div class="column">
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
                 <img
+                  v-if="this.$auth.loggedIn"
                   class="pre-img"
-                  src="/images/presentation/farm.jpg"
+                  src="/images/presentation/social.jpg"
                   alt="Placeholder image"
                 />
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="content is-size-6 has-text-weight-semibold">
-                Sell your products to consumers entirely by your own.
-              </div>
-            </div>
-            <div class="d-pre-btn">
-              <client-only>
-                <button class="button pre-btn is-size-7">
-                  Learn more
-                  <span class="icon pl-4">
-                    <i class="fas fa-arrow-right"></i>
-                  </span></button
-              ></client-only>
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
                 <img
-                  class="pre-img"
-                  src="/images/presentation/invest.jpg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="content is-size-6 has-text-weight-semibold">
-                Invest in a farmer to support him or be a partner.
-              </div>
-            </div>
-            <div class="d-pre-btn">
-              <client-only>
-                <button class="button pre-btn is-size-7">
-                  Learn more
-                  <span class="icon pl-4">
-                    <i class="fas fa-arrow-right"></i>
-                  </span></button
-              ></client-only>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        v-else
-        class="columns mt-5"
-        :class="{
-          'd-d-pre': !this.$auth.loggedIn,
-          'notd-d-pre': this.$auth.loggedIn,
-        }"
-      >
-        <div v-if="isLogged" class="column">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img
+                  v-else
                   class="pre-img"
                   src="/images/presentation/consumer.jpg"
                   alt="Placeholder image"
@@ -88,13 +29,28 @@
               </figure>
             </div>
             <div class="card-content">
-              <div class="content is-size-6 has-text-weight-semibold">
+              <div
+                v-if="this.$auth.loggedIn"
+                class="content is-size-6 has-text-weight-semibold"
+              >
+                Post, share a product you like on Waloo and others social media.
+              </div>
+              <div v-else class="content is-size-6 has-text-weight-semibold">
                 Buy from your favourites farmers and stay in touch.
               </div>
             </div>
             <div class="d-pre-btn">
               <client-only>
-                <button class="button pre-btn is-size-7">
+                <button
+                  v-if="this.$auth.loggedIn"
+                  class="button pre-btn is-size-7"
+                >
+                  <span>Learn more</span>
+                  <span class="icon">
+                    <i class="fas fa-arrow-right"></i>
+                  </span>
+                </button>
+                <button v-else class="button pre-btn is-size-7">
                   <span class="icon pr-4">
                     <i class="fas fa-user-plus"></i>
                   </span>
@@ -164,13 +120,7 @@
 </template>
 
 <script>
-export default {
-  computed: {
-    isLogged() {
-      return this.$auth.loggedIn === true
-    },
-  },
-}
+export default {}
 </script>
 
 <style scoped>

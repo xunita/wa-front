@@ -13,15 +13,15 @@
         <div class="column">
           <div class="card">
             <div class="card-image">
-              <figure class="image is-4by3">
+              <figure v-if="this.$auth.loggedIn" class="image is-4by3">
                 <img
-                  v-if="this.$auth.loggedIn"
                   class="pre-img"
                   src="/images/presentation/social.jpg"
                   alt="Placeholder image"
                 />
+              </figure>
+              <figure v-else class="image is-4by3">
                 <img
-                  v-else
                   class="pre-img"
                   src="/images/presentation/consumer.jpg"
                   alt="Placeholder image"

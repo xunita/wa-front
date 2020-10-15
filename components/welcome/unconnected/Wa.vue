@@ -6,6 +6,70 @@
         consumer or invest in a farmer.
       </h6>
       <div
+        v-if="isLogged"
+        class="columns mt-5"
+        :class="{
+          'd-d-pre': !this.$auth.loggedIn,
+          'notd-d-pre': this.$auth.loggedIn,
+        }"
+      >
+        <div class="column">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  class="pre-img"
+                  src="/images/presentation/farm.jpg"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content is-size-6 has-text-weight-semibold">
+                Sell your products to consumers entirely by your own.
+              </div>
+            </div>
+            <div class="d-pre-btn">
+              <client-only>
+                <button class="button pre-btn is-size-7">
+                  Learn more
+                  <span class="icon pl-4">
+                    <i class="fas fa-arrow-right"></i>
+                  </span></button
+              ></client-only>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  class="pre-img"
+                  src="/images/presentation/invest.jpg"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content is-size-6 has-text-weight-semibold">
+                Invest in a farmer to support him or be a partner.
+              </div>
+            </div>
+            <div class="d-pre-btn">
+              <client-only>
+                <button class="button pre-btn is-size-7">
+                  Learn more
+                  <span class="icon pl-4">
+                    <i class="fas fa-arrow-right"></i>
+                  </span></button
+              ></client-only>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        v-else
         class="columns mt-5"
         :class="{
           'd-d-pre': !this.$auth.loggedIn,
@@ -103,7 +167,7 @@
 export default {
   computed: {
     isLogged() {
-      return this.$auth.loggedIn === false
+      return this.$auth.loggedIn === true
     },
   },
 }

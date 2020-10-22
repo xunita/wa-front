@@ -7,34 +7,34 @@
             >See more popular articles</a
           >
         </h6>
+        <client-only>
+          <div
+            class="prev is-clickable ml-4"
+            @mouseover="showLeft"
+            @mouseleave="unshowLeft"
+          >
+            <span v-if="left" key="poret" class="icon">
+              <i class="fas fa-chevron-circle-left"></i>
+            </span>
+            <span v-else key="potre" class="icon">
+              <i class="fas fa-chevron-left"></i>
+            </span>
+          </div>
+          <div
+            class="next is-clickable mr-4"
+            @mouseover="showRight"
+            @mouseleave="unshowRight"
+          >
+            <span v-if="right" key="por" class="icon">
+              <i class="fas fa-chevron-circle-right"></i>
+            </span>
+            <span v-else key="pot" class="icon">
+              <i class="fas fa-chevron-right"></i>
+            </span>
+          </div>
+        </client-only>
         <div id="elprod" class="is-flex db-prod">
-          <client-only>
-            <div
-              class="prev is-clickable ml-4"
-              @mouseover="showLeft"
-              @mouseleave="unshowLeft"
-            >
-              <span v-if="left" key="poret" class="icon">
-                <i class="fas fa-chevron-circle-left"></i>
-              </span>
-              <span v-else key="potre" class="icon">
-                <i class="fas fa-chevron-left"></i>
-              </span>
-            </div>
-            <div
-              class="next is-clickable mr-4"
-              @mouseover="showRight"
-              @mouseleave="unshowRight"
-            >
-              <span v-if="right" key="por" class="icon">
-                <i class="fas fa-chevron-circle-right"></i>
-              </span>
-              <span v-else key="pot" class="icon">
-                <i class="fas fa-chevron-right"></i>
-              </span>
-            </div>
-          </client-only>
-          <div v-for="i in 8" :key="i" class="column m-centered">
+          <div v-for="i in 10" :key="i" class="column">
             <Product />
           </div>
         </div>
@@ -118,13 +118,13 @@ export default {
 .prev {
   position: absolute;
   z-index: 999;
-  top: 45%;
+  top: 50%;
   left: 0;
 }
 .next {
   position: absolute;
   z-index: 999;
-  top: 45%;
+  top: 50%;
   right: 0;
 }
 .db-prod {

@@ -1,52 +1,61 @@
 <template>
-  <div class="fav-page box">
-    <div class="title-fav py-3">
-      <span class="has-text-weight-semibold is-size-6 px-4">My favorites</span>
+  <div class="vvcard the-prod">
+    <div class="card-image">
+      <client-only>
+        <a
+          v-if="hasFavorite"
+          title="Retire the favorites"
+          class="btn-fav filled"
+        >
+          <span key="azstared" class="icon my-2 mx-1">
+            <i class="fas fa-heart"></i>
+          </span>
+        </a>
+        <a v-else title="Add to the favorites" class="btn-fav unfilled">
+          <span key="zaunstared" class="icon my-2 mx-1">
+            <i class="far fa-heart"></i>
+          </span>
+        </a>
+      </client-only>
+      <figure class="image is-3by2">
+        <img
+          class="prod-img"
+          src="/images/presentation/consumer.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
     </div>
-    <div class="d-fav-list px-4 my-3">
-      <div
-        v-for="(item, index) in myfav"
-        :key="index"
-        class="fav-list py-4 is-flex justy-between"
-      >
-        <ProductFav :item="item" class="profav" />
-        <div class="info-fav is-flex ml-6 pr-2">
-          <button
-            class="button is-small is-font-size16 has-no-border btn-favv is-success is-light"
+    <div>
+      <div class="px-2 is-flex info">
+        <span class="tittle is-block my-1">Vegetables from Ivory coast</span>
+        <div class="is-flex justy-between">
+          <span
+            class="price is-size-6 is-block has-text-weight-semibold is-color-028300"
+            >$ 8,45/Kilo</span
           >
-            <span>Retire from the favorites</span>
-          </button>
-          <div
-            class="add-cart is-flex justy-between mt-4"
-            :class="{ 'fited-width': item.qte === 0 }"
+          <span
+            class="is-block fited-width is-color-028300 reductible is-border-radius-5px has-text-weight-semibold"
+            >-4%</span
           >
-            <div
-              class="is-flex-self-end"
-              :class="{ 'is-flex-self-center': item.qte === 0 }"
-            >
-              <span
-                v-if="item.qte !== 0 || item.disponibility !== null"
-                class="buttonss btn-available is-size-6 has-text-weight-semibold"
-              >
-                In stock
-              </span>
-              <span
-                v-else-if="item.disponibility === null"
-                class="buttonss btn-unavailable is-size-6 has-text-weight-semibold"
-              >
-                Sold out
+        </div>
+        <span class="priceold is-size-7 is-block has-text-weight-semibold"
+          >$ 9,45</span
+        >
+        <div class="supp">
+          <div class="add-cart is-flex justy-between">
+            <div class="is-flex-self-end">
+              <span class="buttonss btn-available has-text-weight-semibold">
+                Available
               </span>
             </div>
-            <div v-if="item.qte !== 0" class="field">
-              <div class="control is-flex is-col-flex">
-                <label
-                  class="is-block is-size-6 has-text-weight-semibold pb-1"
-                  for="qty"
-                  >Quantity (Kilo)</label
-                >
+            <div class="field">
+              <div class="control">
+                <label class="is-size-7 has-text-weight-semibold" for="qty"
+                  >Quantity/Kilo</label
+                ><br />
                 <input
                   id="qty"
-                  class="input qte is-block is-flex-self-end"
+                  class="input qte"
                   type="number"
                   min="0"
                   placeholder="Qty"
@@ -54,42 +63,14 @@
               </div>
             </div>
           </div>
-          <div v-if="item.qte !== 0" class="add-cart-btn mt-5 is-flex-self-end">
-            <button class="button is-small is-font-size16 btnbtn btn-subscribe">
+          <div class="m-centered add-cart-btn my-2">
+            <button class="button btnbtn btn-subscribe is-size-7">
               <client-only>
                 <span class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </span>
               </client-only>
               <span>Add to cart</span>
-            </button>
-          </div>
-          <div
-            v-else-if="item.disponibility !== null"
-            class="add-cart-btn mt-5 is-flex-self-end"
-          >
-            <button class="button is-small is-font-size16 btnbtn btn-subscribe">
-              <client-only>
-                <span class="icon">
-                  <i class="fas fa-shopping-basket"></i>
-                </span>
-              </client-only>
-              <span>Pre-order</span>
-            </button>
-          </div>
-          <div v-if="item.qte !== 0" class="add-cart-btn-add mt-5 m-centered">
-            <button
-              class="button is-small is-font-size16 btnbtn btn-subscribes"
-            >
-              <client-only>
-                <span class="icon">
-                  <i class="fas fa-shopping-bag"></i>
-                </span>
-                <span>Go to cart to order</span>
-                <span class="icon">
-                  <i class="fas fa-arrow-circle-right"></i>
-                </span>
-              </client-only>
             </button>
           </div>
         </div>
@@ -100,55 +81,21 @@
 
 <script>
 export default {
-  computed: {
-    myfav() {
-      return this.$store.state.myFav
-    },
+  data() {
+    return {
+      hasFavorite: false,
+    }
   },
 }
 </script>
-<style scoped>
-.btn-subscribes {
-  background: #004e66 !important;
-  border: #004e66 !important;
-  color: rgb(255, 255, 255) !important;
-}
-.btn-subscribes:hover,
-.btn-subscribes:focus,
-.btn-subscribes:active {
-  background: #004e66e1 !important;
-  border: #004e66e1 !important;
-}
-.fav-page {
-  padding: 0;
-  position: relative;
-  top: 3rem;
-  width: 100%;
-  min-height: 470px;
-}
-.btn-favv {
-  width: fit-content !important;
-}
-.info-fav {
-  width: 100%;
-  flex-direction: column;
-}
-.title-fav {
-  width: 100%;
-  border-bottom: 1px solid #d4d4d4;
-  background-color: #eeeeee00;
-}
-.fav-list {
-  width: 50%;
-  border-bottom: 1px solid #e4e4e4;
-  margin: 0 auto;
-}
-</style>
 
 <style scoped>
+.image {
+  height: 145px !important;
+}
 .the-prod {
   flex: none;
-  width: 205.2px;
+  width: 180px;
   z-index: 0;
 }
 .fa-heart {
@@ -220,31 +167,9 @@ export default {
   width: 205.2px;
   z-index: 0;
 }
-@media screen and (max-width: 956px) {
-  .fav-list {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 690px) {
-  .fav-list {
-    width: 100% !important;
-  }
-}
-@media screen and (max-width: 575px) {
-  .info-fav {
-    margin-left: 0.5rem !important;
-  }
-}
-@media screen and (max-width: 535px) {
-  .fav-list {
-    flex-direction: column;
-  }
-  .profav {
-    width: fit-content;
-    margin: 0 auto;
-  }
-  .info-fav {
-    margin-top: 1.5rem;
+@media screen and (max-width: 798px) {
+  .products-pop {
+    margin-top: 4rem !important;
   }
 }
 .most-card {
@@ -257,6 +182,21 @@ export default {
   overflow-x: hidden;
   z-index: 0;
 }
+.vvcard:hover {
+  cursor: pointer;
+  animation: 0.2s appear;
+  background-color: white;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative;
+  transform: scale(1.05);
+}
+.vvcard:hover .supp {
+  display: block !important;
+  animation: 0.5s appearz;
+}
 .qte {
   width: 70px;
   height: 28px;
@@ -267,17 +207,7 @@ export default {
   border: #ffffff2c !important;
   color: #027900 !important;
 }
-.btn-unavailable {
-  background: #ffffff2c !important;
-  border: #ffffff2c !important;
-  color: red !important;
-}
-.add-cart-btn {
-  width: 65%;
-}
-.add-cart-btn-add {
-  width: 100%;
-}
+.add-cart-btn,
 .btnbtn {
   width: 100%;
 }

@@ -1,9 +1,15 @@
 <template>
-  <div class="fav-home"></div>
+  <div class="fav-home">
+    <Info />
+  </div>
 </template>
 
 <script>
 export default {
+  middleware: 'auth',
+  created() {
+    this.$store.dispatch('getfavorite')
+  },
   // layout: 'body',
 }
 </script>

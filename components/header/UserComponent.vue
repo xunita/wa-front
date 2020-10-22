@@ -19,6 +19,21 @@
                 }
               "
             >
+              <figure class="mr-1 mt-1 user-img">
+                <img
+                  v-lazy-load
+                  class="user-img"
+                  :data-src="
+                    this.$auth.user.profile !== null
+                      ? 'http://localhost:8000/storage/users/' +
+                        this.$auth.user.id +
+                        '/profile/' +
+                        this.$auth.user.profile
+                      : '/images/profile/1.png'
+                  "
+                  alt="Placeholder image"
+                />
+              </figure>
               <span class="has-text-weight-semibold is-size-6 name is-color-4a"
                 >Hi, {{ this.$auth.user.name | capitalize }}</span
               >
@@ -29,13 +44,25 @@
           </div>
           <div id="dropdown-menu" class="dropdown-menu signup" role="menu">
             <div class="dropdown-content has-text-centered">
-              <a class="a-cart is-flex align-center dropdown-item">
+              <nuxt-link
+                to="/waloo/user/myaccount"
+                class="a-cart is-flex align-center dropdown-item"
+              >
                 <span class="icon is-block">
                   <i class="fas fa-user"></i>
                 </span>
                 <span
                   class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
                   >Profile</span
+                >
+              </nuxt-link>
+              <a class="a-cart is-flex align-center dropdown-item">
+                <span key="wstared" class="icon is-block">
+                  <i class="fas fa-rss"></i>
+                </span>
+                <span
+                  class="my-cart is-block pl-1 mb-1 has-text-weight-semibold is-color-black"
+                  >Feeds</span
                 >
               </a>
               <a class="a-cart is-flex align-center dropdown-item">

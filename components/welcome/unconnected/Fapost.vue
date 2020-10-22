@@ -16,7 +16,7 @@
                       <div class="d-ico-enter is-clickable">
                         <img
                           class="ico-enter is-rounded"
-                          src="https://crosscut.com/sites/default/files/styles/max_2000x2000/public/images/articles/veronica_001.jpg"
+                          src="/images/presentation/consumer.jpg"
                           alt="Image"
                         />
                         <span class="icon ico-check checks">
@@ -98,7 +98,16 @@
                     preload="none"
                     poster="/videos/poster.jpg"
                     data-setup="{}"
-                    onclick="if(this.playing) this.pause(); else this.play();"
+                    onclick="
+                    this.increment++;
+                    if (this.increment <=1 ) {
+                      this.isPlaying = true;
+                      this.play();
+                    } else if (this.increment > 1) {
+                      if (this.playing) this.pause();
+                      else this.play();
+                    }
+                    if (this.stop) this.play();"
                   >
                     <source
                       src="/videos/camilo-pablo-alboran-el-mismo-aire-official-video.mp4"
@@ -145,7 +154,7 @@
                     <div class="d-ico-enter is-clickable">
                       <img
                         class="ico-enter is-rounded"
-                        src="https://www.thehindu.com/sci-tech/agriculture/87sx5z/article30131510.ece/ALTERNATES/LANDSCAPE_1200/NEWS2FARMER"
+                        src="/images/presentation/consumer.jpg"
                         alt="Image"
                       />
                     </div>
@@ -232,7 +241,7 @@
                 <figure class="image is-clickable">
                   <img
                     class="prod-img"
-                    src="https://crosscut.com/sites/default/files/styles/max_2000x2000/public/images/articles/veronica_001.jpg"
+                    src="/images/presentation/consumer.jpg"
                     alt="Placeholder image"
                   />
                 </figure>
@@ -277,8 +286,14 @@
 export default {
   data() {
     return {
+      increment: 0,
       isPlaying: false,
     }
+  },
+  computed: {
+    playing() {
+      return this.isPlaying === true
+    },
   },
 }
 </script>

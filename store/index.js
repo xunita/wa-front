@@ -1,10 +1,14 @@
 export const state = () => ({
+  // Status
   errorRegister: false,
   emailUsed: false,
   registered: false,
   errorLogin: false,
   notLogged: false,
-
+  hasPicDeleted: false,
+  hasPicUpadated: false,
+  /* User management */
+  // Auth
   registerUser: {
     email: '',
     name: '',
@@ -17,8 +21,15 @@ export const state = () => ({
     email: '',
     password: '',
   },
+  myAdress: {},
+  myPhone: {},
+  mytoken: '',
+  // Products
+  // My favorites
+  myFav: {},
 })
 export const mutations = {
+  // User info
   registerInfo(state, value) {
     state.registerUser.email = value.email
     state.registerUser.name = value.name
@@ -40,11 +51,28 @@ export const mutations = {
   hasMailUsed(state, value) {
     state.emailUsed = value
   },
-  // noAuth(state, value) {
-  //   state.hasFailedAuth = value
-  // },
+  // User Product favorites
+  setFavorites(state, value) {
+    state.myFav = value
+  },
+  setAdress(state, value) {
+    state.myAdress = value
+  },
+  setPhone(state, value) {
+    state.myPhone = value
+  },
+  setmyToken(state, value) {
+    state.mytoken = value
+  },
+  setupdPic(state, value) {
+    state.hasPicUpadated = value
+  },
+  setdelPic(state, value) {
+    state.hasPicDeleted = value
+  },
 }
 export const actions = {
+  // Auth
   register({ state, commit }) {
     return new Promise((resolve, reject) => {
       this.$axios
@@ -75,11 +103,154 @@ export const actions = {
             commit('hasNotLogged', true)
           } else {
             commit('hasNotLogged', false)
+            commit('setmyToken', response.data.token)
           }
           resolve(response)
         })
         .catch((error) => {
           commit('hasNotLogged', true)
+          reject(error)
+        })
+    })
+  },
+  getAdress({ state, commit }) {
+    return new Promise((resolve, reject) => {
+      // const config = {
+      //   headers: { Authorization: `Bearer ${state.mytoken}` },
+      // }
+      this.$axios
+        .$post('myadresses', { id: this.$auth.user.id })
+        .then((response) => {
+          if (response.message) commit('setAdress', {})
+          else commit('setAdress', response['0'])
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+  getPhone({ commit }) {
+    return new Promise((resolve, reject) => {
+      // const config = {
+      //   headers: { Authorization: `Bearer ${state.mytoken}` },
+      // }
+      this.$axios
+        .$post('myphones', { id: this.$auth.user.id })
+        .then((response) => {
+          if (response.message) commit('setPhone', {})
+          else commit('setPhone', response['0'])
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+  // Products
+  getfavorite({ commit }) {
+    return new Promise((resolve, reject) => {
+      this.$axios
+        .$post('myfavorites', { id: this.$auth.user.id })
+        .then((response) => {
+          if (response.message) {
+            commit('setFavorites', {})
+          } else {
+            commit('setFavorites', response)
+          }
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+  updateUserPic({ commit }, picture) {
+    const formData = new FormData()
+    formData.append('file', picture)
+    formData.append('id', this.$auth.user.id)
+    return new Promise((resolve, reject) => {
+      this.$axios
+        .$post('updatepic', formData, {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        })
+        .then((response) => {
+          if (response.undo) {
+            commit('setupdPic', false)
+          } else {
+            commit('setupdPic', true)
+          }
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+  delUserPic({ commit }) {
+    return new Promise((resolve, reject) => {
+      this.$axios
+        .$post('delpic', { id: this.$auth.user.id })
+        .then((response) => {
+          if (response.undo) {
+            commit('setdelPic', false)
+          } else {
+            commit('setdelPic', true)
+          }
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+  updateUserInfo({ commit }) {
+    return new Promise((resolve, reject) => {
+      this.$axios
+        .$post('myfavorites', { id: this.$auth.user.id })
+        .then((response) => {
+          if (response.message) {
+            commit('setFavorites', {})
+          } else {
+            commit('setFavorites', response)
+          }
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+  updateAdress({ commit }) {
+    return new Promise((resolve, reject) => {
+      this.$axios
+        .$post('myfavorites', { id: this.$auth.user.id })
+        .then((response) => {
+          if (response.message) {
+            commit('setFavorites', {})
+          } else {
+            commit('setFavorites', response)
+          }
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+  updateTel({ commit }) {
+    return new Promise((resolve, reject) => {
+      this.$axios
+        .$post('myfavorites', { id: this.$auth.user.id })
+        .then((response) => {
+          if (response.message) {
+            commit('setFavorites', {})
+          } else {
+            commit('setFavorites', response)
+          }
+          resolve(response)
+        })
+        .catch((error) => {
           reject(error)
         })
     })

@@ -1,39 +1,54 @@
 <template>
-  <div class="vvcard the-prod">
+  <div class="vvcard the-prod pb-2">
     <div class="card-image">
       <client-only>
-        <a title="Retire the favorites" class="btn-fav filled">
+        <a title="Retire from the favorites" class="btn-fav filled">
           <span class="icon my-2 mx-1">
             <i class="fas fa-heart"></i>
           </span>
         </a>
       </client-only>
-      <figure class="image is-1by1">
+      <figure
+        lazy-background="/images/product/product.gif"
+        class="image is-3by2"
+      >
         <img
           class="prod-img"
-          src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/farm-products-video-ad-design-template-1a4a8132e768959dd45c81ad1a5cb219_screen.jpg?ts=1574938455"
+          :src="
+            'http://localhost:8000/storage/shop/' +
+            item.shop_id +
+            '/products/' +
+            item.picture
+          "
           alt="Placeholder image"
         />
       </figure>
     </div>
     <div>
       <div class="px-2 is-flex info">
-        <span class="tittle is-block my-1"
-          >Tecno Spark 5 Air - 7"- 2 Go - 32 Go - Jadeite Ice - Garantie 1
-          An</span
-        >
+        <client-only>
+          <nuxt-link to="#" class="shopname is-color-4a"
+            ><span
+              class="underline is-size-7 has-text-weight-semibold is-color-4a"
+              >{{ item.shop.name }}</span
+            ><span class="icon ico-check mt-1">
+              <i class="fas fa-check-circle"></i> </span
+          ></nuxt-link>
+        </client-only>
+        <span class="tittle is-block">{{ item.title | capitalize }}</span>
         <div class="is-flex justy-between">
           <span
             class="price is-size-6 is-block has-text-weight-semibold is-color-028300"
-            >$ 998,45</span
+            >$ {{ item | price }}/Kilo</span
           >
           <span
+            v-if="item.reduction !== 0"
             class="is-block fited-width is-color-028300 reductible is-border-radius-5px has-text-weight-semibold"
-            >-14%</span
+            >-{{ item.reduction }}%</span
           >
         </div>
         <span class="priceold is-size-7 is-block has-text-weight-semibold"
-          >$ 1350,45</span
+          >$ {{ item.price }}</span
         >
       </div>
     </div>
@@ -42,6 +57,25 @@
 
 <script>
 export default {
+  filters: {
+    capitalize(value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    },
+    price(value) {
+      if (value.reduction === 0) return value.toFixed(2)
+      return (value.price * (value.reduction / 100)).toFixed(2)
+    },
+  },
+  props: {
+    item: {
+      type: Object,
+      default() {
+        return {}
+      },
+    },
+  },
   data() {
     return {
       hasFavorite: false,
@@ -51,9 +85,22 @@ export default {
 </script>
 
 <style scoped>
+.fa-check-circle {
+  color: #666666;
+  font-size: 11px;
+}
+.shopname {
+  margin-top: -0.3rem;
+}
+.shopname:hover {
+  color: #4a4a4a !important;
+}
+.image {
+  height: 145px !important;
+}
 .the-prod {
   flex: none;
-  width: 205.2px;
+  width: 180px;
   z-index: 0;
 }
 .btn-fav .icon {
@@ -252,6 +299,7 @@ export default {
 }
 .tittle {
   text-overflow: ellipsis;
+  margin-top: -0.3rem;
   white-space: nowrap;
   overflow: hidden;
 }

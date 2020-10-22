@@ -1,10 +1,10 @@
 <template>
-  <div class="vvcard the-prod">
-    <div class="card-image">
+  <div class="vvcard the-prod pb-2">
+    <div lazy-background="/images/product/product.gif" class="card-image">
       <client-only>
         <a
           v-if="hasFavorite"
-          title="Retire the favorites"
+          title="Retire from the favorites"
           class="btn-fav filled"
         >
           <span key="azstared" class="icon my-2 mx-1">
@@ -17,65 +17,39 @@
           </span>
         </a>
       </client-only>
-      <figure class="image is-1by1">
+      <figure class="image is-3by2">
         <img
           class="prod-img"
-          src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/farm-products-video-ad-design-template-1a4a8132e768959dd45c81ad1a5cb219_screen.jpg?ts=1574938455"
+          src="/images/presentation/consumer.jpg"
           alt="Placeholder image"
         />
       </figure>
     </div>
     <div>
       <div class="px-2 is-flex info">
-        <span class="tittle is-block my-1"
-          >Tecno Spark 5 Air - 7"- 2 Go - 32 Go - Jadeite Ice - Garantie 1
-          An</span
-        >
+        <client-only>
+          <nuxt-link to="#" class="shopname is-color-4a"
+            ><span
+              class="underline is-size-7 has-text-weight-semibold is-color-4a"
+              >Agrifa</span
+            ><span class="icon ico-check pt-1">
+              <i class="fas fa-check-circle"></i> </span
+          ></nuxt-link>
+        </client-only>
+        <span class="tittle is-block">Vegetables from Ivory coast</span>
         <div class="is-flex justy-between">
           <span
             class="price is-size-6 is-block has-text-weight-semibold is-color-028300"
-            >$ 998,45</span
+            >$ 8,45/Kilo</span
           >
           <span
             class="is-block fited-width is-color-028300 reductible is-border-radius-5px has-text-weight-semibold"
-            >-14%</span
+            >-4%</span
           >
         </div>
         <span class="priceold is-size-7 is-block has-text-weight-semibold"
-          >$ 1350,45</span
+          >$ 9,45</span
         >
-        <div class="supp">
-          <div class="add-cart is-flex justy-between">
-            <div class="is-flex-self-end">
-              <span class="buttonss btn-available has-text-weight-semibold">
-                Available
-              </span>
-            </div>
-            <div class="field">
-              <div class="control">
-                <label class="is-size-7 has-text-weight-semibold" for="qty"
-                  >Quantity</label
-                ><br />
-                <input
-                  id="qty"
-                  class="input qte"
-                  type="number"
-                  placeholder="Qty"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="m-centered add-cart-btn my-2">
-            <button class="button btnbtn btn-subscribe is-size-7">
-              <client-only>
-                <span class="icon">
-                  <i class="fas fa-shopping-cart"></i>
-                </span>
-              </client-only>
-              <span>Add to cart</span>
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -92,9 +66,19 @@ export default {
 </script>
 
 <style scoped>
+.fa-check-circle {
+  color: #666666;
+  font-size: 11px;
+}
+.shopname:hover {
+  color: #4a4a4a !important;
+}
+.image {
+  height: 145px !important;
+}
 .the-prod {
   flex: none;
-  width: 205.2px;
+  width: 180px;
   z-index: 0;
 }
 .fa-heart {
@@ -292,12 +276,16 @@ export default {
     width: 100%;
   }
 } */
+.shopname {
+  margin-top: -0.2rem;
+}
 .reductible {
   align-self: flex-end;
   padding: 0rem 0.3rem 0rem 0.3rem;
   background-color: rgba(2, 131, 0, 0.192);
 }
 .tittle {
+  margin-top: -0.3rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

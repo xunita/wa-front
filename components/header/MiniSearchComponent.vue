@@ -128,7 +128,7 @@ div.select {
 @media screen and (max-width: 400px) {
   .search-d,
   .d-search {
-    width: 90% !important;
+    width: 95% !important;
   }
 }
 @media screen and (max-width: 370px) {

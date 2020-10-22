@@ -96,14 +96,14 @@ export default {}
     width: 100% !important;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 390px) {
   .big-cart {
     display: none !important;
   }
   .mymini-cart {
     display: block !important;
     position: relative;
-    right: 3.5rem;
+    right: 2.7rem;
   }
   .search-mini {
     margin-left: 0% !important;

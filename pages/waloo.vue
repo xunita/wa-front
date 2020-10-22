@@ -16,8 +16,40 @@
 </template>
 
 <script>
+const CryptoJS = require('crypto-js')
 export default {
-  // layout: 'body',
+  beforeMount() {
+    window.addEventListener('beforeunload', this.handler)
+  },
+  mounted() {
+    this.getTokenFromStorage()
+  },
+  methods: {
+    handler() {
+      if (this.$auth.loggedIn) {
+        // Encrypt
+        const ciphertext = CryptoJS.AES.encrypt(
+          this.$store.state.mytoken,
+          'whothehellareyou'
+        )
+        localStorage.setItem('atinux', ciphertext)
+      }
+    },
+    getTokenFromStorage() {
+      if (this.$auth.loggedIn) {
+        if (localStorage.atinux) {
+          // Decrypt
+          const bytes = CryptoJS.AES.decrypt(
+            localStorage.getItem('atinux'),
+            'whothehellareyou'
+          )
+          const plaintext = bytes.toString(CryptoJS.enc.Utf8)
+          this.$store.commit('setmyToken', plaintext)
+          localStorage.removeItem('atinux')
+        }
+      }
+    },
+  },
 }
 </script>
 <style scoped>

@@ -14,7 +14,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: 'Waloo - Faites vos achats dans toutes vos boutiques préférées',
+    title: 'Waloo - Buy your products from source',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -77,6 +77,13 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     '@nuxtjs/pwa',
+    [
+      'nuxt-lazy-load',
+      {
+        directiveOnly: true,
+        defaultImage: '/images/product/product.gif',
+      },
+    ],
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
@@ -85,19 +92,28 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://waback.herokuapp.com/api',
+    baseURL: 'http://127.0.0.1:8000/api',
     credentials: true,
   },
   auth: {
     localStorage: false,
     redirect: {
-      login: '/login',
+      login: '/waloo/login',
       logout: '/',
-      callback: '/login',
+      callback: '/waloo/login',
       home: '/',
     },
     strategies: {
       local: {
+        token: {
+          property: 'token',
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: 'user',
+          // autoFetch: true
+        },
         endpoints: {
           login: {
             url: 'login',
@@ -106,6 +122,9 @@ export default {
           },
           logout: { url: 'logout', method: 'get' },
           user: { url: 'AuthUser', method: 'get', propertyName: 'user' },
+          adress: { url: 'myadresses', method: 'post' },
+          phone: { url: 'myphones', method: 'post' },
+          userUpdate: { url: 'updateme', method: 'post' },
         },
         // tokenRequired: true,
         // tokenType: 'bearer',

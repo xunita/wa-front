@@ -1,7 +1,7 @@
 <template>
   <div class="bewa px-2">
     <div class="columns">
-      <div class="column is-one-fifth">
+      <div class="column is-one-fifth listcateg">
         <div class="card">
           <div class="card-content">
             <div
@@ -283,9 +283,23 @@ export default {
     margin-left: -0.6rem;
   }
 }
+@media screen and (max-width: 867px) {
+  .most-card {
+    height: 420px;
+  }
+  .ads-img {
+    height: 420px;
+  }
+}
 @media screen and (max-width: 768px) {
-  .db-prod {
-    display: flex !important;
+  .listcateg {
+    display: none !important;
+  }
+  .most-card {
+    height: 400px;
+  }
+  .ads-img {
+    height: 400px;
   }
   .prod-taille {
     width: 33%;
@@ -302,6 +316,22 @@ export default {
 @media screen and (max-width: 700px) {
   .prod-taille {
     width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .most-card {
+    height: 320px;
+  }
+  .ads-img {
+    height: 320px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .most-card {
+    height: 240px;
+  }
+  .ads-img {
+    height: 240px;
   }
 }
 @keyframes appear {

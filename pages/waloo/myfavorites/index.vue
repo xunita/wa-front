@@ -6,6 +6,10 @@
 
 <script>
 export default {
+  middleware: 'auth',
+  created() {
+    this.$store.dispatch('getfavorite')
+  },
   // layout: 'body',
 }
 </script>

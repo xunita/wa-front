@@ -19,4 +19,6 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+## Netlify deploying build status
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/af0cb9a1-6262-471e-bde0-097c26164628/deploy-status)](https://app.netlify.com/sites/waloo-site/deploys)

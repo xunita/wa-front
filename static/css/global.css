@@ -17,6 +17,52 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all 1s ease;
+  transform: translateX(10px);
+}
+.slide-fade-leave-active {
+  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+/**/
+.slide-fade-u-enter-active {
+  transition: all 1s ease;
+  transform: translateX(10px);
+}
+.slide-fade-u-leave-active {
+  transition: all 1s ease;
+  transform: translateX(10px);
+}
+.slide-fade-u-enter, .slide-fade-u-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.user-img {
+  border-radius: 290486px;
+  width: 32px;
+  height: 32px;
+}
+.user-img-inf {
+  border-radius: 290486px;
+  width: 64px;
+  height: 64px;
+}
 .is-clickable {
   cursor: pointer;
 }
@@ -64,8 +110,14 @@ body {
 .logout-btn {
   border: none !important;
 }
+.is-font-size16 {
+  font-size: 13.5px !important;
+}
 .is-flex-self-end {
   align-self: flex-end;
+}
+.is-flex-self-center {
+  align-self: center !important;
 }
 .is-justify-self-end {
   justify-self: flex-end;
@@ -123,6 +175,9 @@ body {
 .is-bgcolor-004e66 {
   background-color: #004e66 !important;
 }
+.is-bgcolor-028300 {
+  background-color: #028300 !important;
+}
 .is-color-004e66-hover:hover,
 .is-color-004e66-hover:active {
   color: #004e66 !important;
@@ -150,7 +205,7 @@ body {
   color: white !important;
 }
 .full-width {
-  width: 90% !important;
+  width: 100% !important;
 }
 .is-d-centered {
   width: fit-content !important;
@@ -158,6 +213,9 @@ body {
 }
 .has-a-border {
   border: 1px solid;
+}
+.has-a-border-bottom {
+  border-bottom: 1px solid;
 }
 .border-color-gray {
   border-color: #d4d4d4 !important;

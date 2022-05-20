@@ -1,5 +1,11 @@
 # Waloo
 
+First Idea of waloo developed later in an idea of global all africa ecommerce site.
+
+# demo site
+
+[Demo here](https://waloo-site.netlify.app/waloo#).
+
 ## Build Setup
 
 ```bash
